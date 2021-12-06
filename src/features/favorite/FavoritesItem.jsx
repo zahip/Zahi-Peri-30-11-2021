@@ -4,10 +4,12 @@ import { setSelectedCity } from 'features/weather/weatherSlice'
 import { useDispatch } from 'react-redux'
 import Card from '../../components/shared/Card/Card'
 import './style.scss'
+import useConvertUnit from 'hooks/useConvertUnit'
 
 const FavoritesItem = ({ favoriteItem }) => {
   const navigate = useNavigate()
   const { LocalizedName, Temperature, WeatherText } = favoriteItem
+  const { temp, unit } = useConvertUnit(Temperature.Metric.Value)
   const dispatch = useDispatch()
   const handleClick = () => {
     dispatch(setSelectedCity(favoriteItem))
@@ -19,8 +21,8 @@ const FavoritesItem = ({ favoriteItem }) => {
         <div onClick={handleClick}>
           <div>{LocalizedName}</div>
           <div>
-            <span>{Temperature.Metric.Value}</span>
-            <span>{Temperature.Metric.Unit}</span>
+            <span>{temp}</span>
+            <span>{unit}</span>
           </div>
           <div>{WeatherText}</div>
         </div>

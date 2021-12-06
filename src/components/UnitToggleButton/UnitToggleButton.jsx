@@ -12,8 +12,12 @@ const UnitToggleButton = () => {
   }
   return (
     <ToggleButton value={unit} handleChange={handleChange}>
-      <MuiToggleButton value="C">C</MuiToggleButton>
-      <MuiToggleButton value="F">F</MuiToggleButton>
+      <MuiToggleButton disabled={unit === 'C'} value="C">
+        C
+      </MuiToggleButton>
+      <MuiToggleButton disabled={unit === 'F'} value="F">
+        F
+      </MuiToggleButton>
     </ToggleButton>
   )
 }
