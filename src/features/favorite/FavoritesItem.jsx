@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { setSelectedCity } from 'features/weather/weatherSlice'
 import { useDispatch } from 'react-redux'
 import Card from '../../components/shared/Card/Card'
+import './style.scss'
 
 const FavoritesItem = ({ favoriteItem }) => {
   const navigate = useNavigate()
@@ -13,16 +14,18 @@ const FavoritesItem = ({ favoriteItem }) => {
     navigate('/')
   }
   return (
-    <Card>
-      <div onClick={handleClick}>
-        <div>{LocalizedName}</div>
-        <div>
-          <span>{Temperature.Metric.Value}</span>
-          <span>{Temperature.Metric.Unit}</span>
+    <div className="favorite-item">
+      <Card>
+        <div onClick={handleClick}>
+          <div>{LocalizedName}</div>
+          <div>
+            <span>{Temperature.Metric.Value}</span>
+            <span>{Temperature.Metric.Unit}</span>
+          </div>
+          <div>{WeatherText}</div>
         </div>
-        <div>{WeatherText}</div>
-      </div>
-    </Card>
+      </Card>
+    </div>
   )
 }
 

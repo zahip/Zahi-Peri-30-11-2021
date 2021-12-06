@@ -9,7 +9,9 @@ const Favorits = () => {
 
   return (
     <div>
-      <h1>favorits</h1>
+      <h1 className="favoirite-title">
+        {favoritsObject ? 'Favorites' : 'No Favorites'}
+      </h1>
       <div className="favoritesList">
         {Object.entries(favoritsObject).map(([key, value]) => (
           <FavoritesItem key={value.Key} favoriteItem={value} />
