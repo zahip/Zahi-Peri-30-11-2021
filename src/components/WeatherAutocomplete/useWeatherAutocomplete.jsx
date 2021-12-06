@@ -44,6 +44,7 @@ const useWeatherAutocomplete = (setIsPending) => {
       if (isEnglishStr(value)) {
         setSearchTerm(value)
       } else {
+        setCities([])
         dispatch(
           setIsModalOpen({ isOpen: true, text: 'Please use english only' }),
         )
