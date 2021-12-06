@@ -22,7 +22,7 @@ const useConvertUnit = (temparature) => {
         setTemp(convertedTemp)
       }
     }
-  }, [unit])
+  }, [unit, prevUnit, temp])
 
   return { temp, unit }
 }

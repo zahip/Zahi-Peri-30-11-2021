@@ -1,5 +1,4 @@
 import React from 'react'
-import FormGroup from '@mui/material/FormGroup'
 
 import MuiCheckbox from '@mui/material/Checkbox'
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder'
